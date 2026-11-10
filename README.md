@@ -61,8 +61,6 @@ Distribuído sob a licença MIT. Consulte [LICENSE](LICENSE).
 
 ---
 
-## English
-
 A personal link page and project showcase for Lucas G. Monte Gomes, bringing profile information, social and contact links, and selected projects together in one place.
 
 ### Run locally
