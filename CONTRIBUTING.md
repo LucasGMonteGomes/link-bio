@@ -1,84 +1,64 @@
-# Contributing to LinkBio
+# Contribuindo
 
-Thank you for your interest in contributing to this project.
+Obrigado por considerar uma contribuição para o LinkBio! Sugestões, correções e melhorias são bem-vindas.
 
-We welcome improvements, fixes, and thoughtful suggestions that help make the profile page clearer, more accessible, and more useful.
+## Antes de começar
 
-## How to contribute
+- Confira se já existe uma issue sobre a alteração proposta.
+- Para mudanças maiores, abra uma issue antes para alinhar a ideia.
+- Para mudanças de conteúdo, links ou aparência, explique o objetivo da alteração.
 
-### 1. Open or review an issue
+## Fluxo de contribuição
 
-Before making changes, check if there is an existing issue related to your idea or bug report.
+1. Faça um fork do repositório e clone-o:
 
-### 2. Fork the project
+   ```bash
+   git clone https://github.com/LucasGMonteGomes/link-bio.git
+   cd link-bio
+   ```
 
-```bash
-git clone https://github.com/LucasGMonteGomes/link-bio.git
-cd link-bio
-```
+2. Crie uma branch com um nome descritivo:
 
-### 3. Create a branch
+   ```bash
+   git checkout -b melhoria/descricao-curta
+   ```
 
-Use a clear and descriptive branch name:
+3. Faça alterações pequenas e focadas, seguindo a estrutura e o estilo existentes.
+4. Instale as dependências e execute o site localmente:
 
-```bash
-git checkout -b feature/your-change
-```
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-### 4. Make your changes
+5. Verifique o build antes de abrir o pull request:
 
-Keep edits focused and easy to review. For this project, common areas are:
+   ```bash
+   npm run build
+   ```
 
-- `src/index.html`
-- `src/projetos.html`
-- `src/style.css`
-- images/assets under `src/assets/`
+6. Envie suas alterações e abra um pull request com uma descrição clara do que foi feito e por quê.
 
-### 5. Validate locally
+## Áreas comuns de alteração
 
-Install dependencies:
+- `src/index.html` — perfil, bio e links
+- `src/projetos.html` — lista de projetos
+- `src/style.css` — apresentação visual e responsividade
+- `src/assets/` — imagens e recursos visuais
 
-```bash
-npm install
-```
+## Orientações para pull requests
 
-Run the app:
+- Mantenha cada pull request focado em uma mudança.
+- Descreva o comportamento esperado e o que foi alterado.
+- Inclua capturas de tela quando a mudança afetar a aparência.
+- Verifique links, textos alternativos de imagens e apresentação em telas pequenas.
+- Não adicione dependências sem necessidade.
+- Confirme que `npm run build` termina sem erros.
 
-```bash
-npm run dev
-```
+## Relatar problemas
 
-Check that the project still builds correctly:
+Abra uma issue com uma descrição objetiva, passos para reproduzir o problema, comportamento esperado e observado e, se útil, capturas de tela.
 
-```bash
-npm run build
-```
+## Código de Conduta
 
-## Pull request guidelines
-
-- Keep pull requests focused on a single change or improvement
-- Include a clear description of what changed and why
-- Mention any relevant screenshots if the design is affected
-- Ensure the project still builds without errors
-- Follow the existing code style and project structure
-
-## Code quality expectations
-
-- Use semantic, meaningful names for new classes or sections
-- Maintain the project's visual simplicity and responsiveness
-- Avoid unnecessary dependencies or over-engineering
-- Preserve the accessibility of links and content
-
-## Reporting issues
-
-Please open a GitHub issue with:
-
-- a clear description of the problem
-- steps to reproduce it
-- expected behavior
-- actual behavior
-- screenshots if applicable
-
-## Community standards
-
-Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md) to keep the project respectful and welcoming.
+Ao participar, siga o [Código de Conduta](CODE_OF_CONDUCT.md). Para reportar problemas de segurança, consulte [SECURITY.md](SECURITY.md).
