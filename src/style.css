@@ -1,0 +1,285 @@
+/* Reset básico para evitar inconsistências entre navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  /* Degradê suave de branco para preto: fica claro na área dos textos
+     e só escurece no fim da página, para não brigar com as letras */
+  background: linear-gradient(180deg, #FFFFFF 0%, #F7F7F7 55%, #E2E2E2 75%, #6E6E6E 90%, #1A1A1A 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #1A1A1A;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Coluna principal (largura máxima para ficar bom no PC) */
+.container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* --- CARTÃO DE PERFIL --- */
+/* Sem painel escuro: a foto fica sozinha e o texto vai para o fundo da página */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #1A1A1A;
+}
+
+.profile-card-media {
+  position: relative;
+  height: 380px;
+  border-radius: 24px;
+  overflow: hidden; /* Corta a foto nas bordas arredondadas */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.profile-card-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%; /* Foca na parte de cima, onde está o rosto */
+}
+
+/* Texto abaixo da foto, alinhado à borda da foto */
+.profile-card-body {
+  padding: 0;
+}
+
+.profile-card h1 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.handle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 15px;
+  color: #555555;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.bio {
+  font-size: 16px;
+  line-height: 1.45;
+  color: #333333;
+  margin-bottom: 22px;
+}
+
+.profile-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Ícones das redes, em linha */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #000000;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+}
+
+/* Botão em pílula, no canto inferior direito */
+.btn-cta {
+  background-color: #000000;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 50px;
+  white-space: nowrap;
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+
+.btn-cta:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* --- SEÇÃO DEVELOPMENTS --- */
+.developments {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A1A1A;
+  text-align: left; /* Alinhado à borda esquerda do banner */
+  width: 100%;
+  letter-spacing: -0.5px;
+}
+
+/* --- BANNER DO SITE --- */
+.site-banner {
+  width: 100%;
+}
+
+.banner-link {
+  display: block;
+  width: 100%;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner-img {
+  width: 100%;
+  height: auto; /* Deixa a imagem ditar a altura naturalmente */
+  display: block; /* Remove um espacinho em branco que fica embaixo das imagens */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.banner-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.banner-link:hover .banner-img {
+  transform: scale(1.03); /* Leve zoom na imagem */
+}
+
+/* Chamada "acesse ->" sobreposta no canto inferior direito do banner */
+.banner-cta {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none; /* O clique continua indo para o link da imagem */
+}
+
+/* --- PÁGINA DE PROJETOS --- */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.back-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1A1A;
+  text-decoration: none;
+  align-self: flex-start;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.page-header h1 {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #1A1A1A;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cartão de projeto: mesma linguagem escura do cartão de perfil */
+.project-card {
+  background-color: #1A1A1A;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.project-link {
+  display: block;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.project-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover .project-img {
+  transform: scale(1.03);
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+}
+
+.project-info h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.project-cta {
+  background-color: #FFFFFF;
+  color: #1A1A1A;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+
+/* --- TELAS PEQUENAS --- */
+@media (max-width: 480px) {
+  .profile-card-media {
+    height: 320px;
+  }
+}
